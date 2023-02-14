@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Experiment No 4</title>
+    <script type="text/Javascript" src="program1.js"></script>
+    <script type="text/Javascript" src="program2.js"></script>
+    <script type="text/Javascript" src="program3.js"></script>
+    <script type="text/Javascript" src="program4.js"></script>
+    <script>
+        function sumComplex(){
+            var a=parseInt(document.getElementById('real1').value);
+    const complex=[{real:a,im:parseInt(document.getElementById('im1').value)},{real:parseInt(document.getElementById('real2').value),im:parseInt(document.getElementById('im2').value)}];
+    console.log(complex[0].real);
+    var sum=((complex[0].real+complex[1].real))+"+i"+(complex[0].im+complex[1].im);
+
+    alert("resulting: complex no:"+sum);
+}
+    </script>
+</head>
+<body>
+    <h1>Javascript Checking </h1>
+    <label for="string" id="string">Enter string</label>
+    <input name="string" id="stringip" type="text">
+    <input type="submit" onclick="combinations()">
+    <br>
+    <label for="array" id="array">Enter array</label>
+    <input type="numbers" name="array" id="arrayip">
+    <input type="submit" onclick="duplicateArray()">
+    <br>
+    <label for="complex" id="complex1">Enter Complex Number 1</label>
+    <br>
+    <label for="complex" id="complex1">Enter real part of number 1</label>
+    <input type="number" name="complex" id="real1">
+    <br>
+    <label for="complex" id="complex1">Enter imaginary part of Number 1</label>
+    <input type="number" name="complex" id="im1">
+    <br>
+    <label for="complex" id="complex2">Enter Complex Number 2</label><br>
+    <label for="complex" id="complex1">Enter real part of number 2</label>
+    <input type="number" name="complex" id="real2"><br>
+    <label for="complex" id="complex1">Enter imaginary part of Number 2</label>
+    <input type="number" name="complex" id="im2">
+    <br>
+    <input type="submit" onclick="sumComplex()">
+    <br>
+    <label for="mail" id="mail">Enter Email</label>
+    <input type="mail" name="mail" id="mailip">
+    <input type="submit" onclick="validateMail()">
+    <br>
+</body>
+</html>
