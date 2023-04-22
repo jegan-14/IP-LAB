@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Book Details</title>
+  <script type="text/javascript">
+    function getBookDetails(bookId) {
+      var xhttp = new XMLHttpRequest();
+      xhttp.onreadystatechange = function() {
+        if (this.readyState == 4 && this.status == 200) {
+          var xmlDoc = this.responseXML;
+          var book = xmlDoc.getElementsByTagName("book")[bookId - 1];
+          var title = book.getElementsByTagName("title")[0].childNodes[0].nodeValue;
+          var author = book.getElementsByTagName("author")[0].childNodes[0].nodeValue;
+          var year = book.getElementsByTagName("year")[0].childNodes[0].nodeValue;
+          var price = book.getElementsByTagName("price")[0].childNodes[0].nodeValue;
+          var message = "Title: " + title + "<br>Author: " + author + "<br>Year: " + year + "<br>Price: $" + price;
+          document.getElementById("bookDetails").innerHTML = message;
+        }
+      };
+      xhttp.open("GET", "books.xml", true);
+      xhttp.send();
+    }
+  </script>
+</head>
+<body>
+  <label for="bookId">Enter Book ID:</label>
+  <input type="text" id="bookId">
+  <button onclick="getBookDetails(document.getElementById('bookId').value)">Get Book Details</button>
+  <div id="bookDetails"></div>
+</body>
+</html>
